@@ -1,0 +1,14 @@
+.songhunt-app-container {
+  min-height: 100vh;
+  @include themify() {
+    @include centred-background-image(
+      $background-image: themed('appBackgroundImage')
+    )
+  }
+}
+
+.songhung-app-wrapper {
+  margin: 0 auto;
+  padding: #{$standart-indent * 2} 0;
+  max-width: $laptop-width;
+}

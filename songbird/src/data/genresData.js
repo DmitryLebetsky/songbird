@@ -36,7 +36,7 @@ import tomWalkerLeaveALightOnCover from '../assets/images/songs/pop/tom-walker-l
 import tomWalkerLeaveALightOnAudio from '../assets/songs/pop/Tom Walker - Leave a Light On.mp3';
 import tomWalkerLeaveALightOnAudioMinus from '../assets/songs/popMinuses/Tom Walker - Leave a Light On (minus).mp3';
 
-import ragnBoneManHumanCover from '../assets/songs/pop/rag\'n\'bone-man-human.jpg';
+import ragnBoneManHumanCover from '../assets/images/songs/pop/rag\'n\'bone-man-human.jpg';
 import ragnBoneManHumanAudio from '../assets/songs/pop/RagnBone Man - Human.mp3';
 import ragnBoneManHumanAudioMinus from '../assets/songs/popMinuses/RagnBone Man - Human (minus).mp3';
 
@@ -137,7 +137,7 @@ import rodneyAtkinsIfYoureGoingThroughHellAudioMinus from '../assets/songs/count
 import jazzIcon from '../assets/images/icons/genres-icons/jazz-icon.jpg';
 
 import adamLambertFeelingGoodCover from '../assets/images/songs/jazz/adam-lambert-feeling-good.jpg';
-import adamLambertFeelingGoodAudio from '../assets/songs/jazz/Adam Lambert - Feeling Good.mp3';
+import adamLambertFeelingGoodAudio from '../assets/songs/jazz/Adam Lambert - Feeling Good.m4a';
 import adamLambertFeelingGoodAudioMinus from '../assets/songs/jazzMinuses/Adam Lambert - Feeling Good (minus).mp3';
 
 import boneyMSunnyCover from '../assets/images/songs/jazz/boney-m-sunny.jpg';

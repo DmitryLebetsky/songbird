@@ -1,0 +1,38 @@
+.active-song-container {
+  height: #{220px + $standart-indent * 2};
+  padding: $standart-indent;
+  background-color: rgba($color: $color-light, $alpha: 0.5);
+  @include flex(
+    $direction: row,
+    $justify-content: flex-start,
+    $align-items: center,
+  )
+}
+
+.active-song-container__cover {
+  width: 220px;
+  height: 220px;
+  margin-right: $standart-indent;
+  object-fit: cover;
+  object-position: center;
+}
+
+.active-song-info-container {
+  height: 100%;
+  flex-basis: 100%;
+  overflow: hidden;
+}
+
+.active-song-info-container__title {
+  color: $color-light;
+  border-bottom: 1px solid $color-light;
+  margin-bottom: $standart-indent;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilySecondary'),
+      $font-size: themed('defaultActiveSongFontSize'),
+    )
+  }
+}

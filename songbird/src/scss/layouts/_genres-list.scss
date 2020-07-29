@@ -1,0 +1,23 @@
+.genres-list {
+  margin-bottom: #{$standart-indent * 2};
+  @include flex(
+    $direction: row, $justify-content: space-between, $align-items: center,
+  );
+  @include themify() {
+    background-color: rgba($color: themed('colorPrimary'), $alpha: 0.5);
+  }
+}
+
+.genres-list__genre-title {
+  padding: #{$standart-indent / 3} #{$standart-indent};
+  text-align: center;
+  color: rgba($color: $color-light, $alpha: 0.5);
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilySecondary'), $font-size: themed('defaultGenreFontSize'),
+    )
+  }
+  &_active {
+    color: $color-light;
+  }
+}

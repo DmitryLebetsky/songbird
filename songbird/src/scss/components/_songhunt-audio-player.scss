@@ -1,0 +1,67 @@
+.songhung-app-wrapper .songhunt-audio-player {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  &:focus,
+  & *:focus {
+    outline: none;
+  }
+  .rhap_controls-section {
+    display: none;
+  }
+  .rhap_play-pause-button {
+    width: 100px;
+    height: 100px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .rhap_time {
+    color: $color-light;
+    @include themify() {
+      @include font(
+        $font-family: themed('fontFamilySecondary'),
+        $font-size: themed('defaultAudioPlayerFontSize'),
+      )
+    }
+  }
+  .rhap_progress-container {
+    margin: 0 $standart-indent;
+    * {
+      background-color: $color-light;
+    }
+  }
+  .rhap_progress-bar,
+  .rhap_volume-bar-area,
+  .rhap_volume-bar {
+    height: 3px;
+  }
+  .rhap_progress-indicator {
+    width: 16px;
+    height: 16px;
+  }
+  .rhap_volume-container {
+    margin: 0 $standart-indent;
+  }
+  .rhap_volume-button {
+    width: 26px;
+    height: 26px;
+  }
+  .rhap_volume-bar-area {
+    * {
+      background-color: $color-light;
+    }
+  }
+}
+
+.songhunt-audio-player__play-icon,
+.songhunt-audio-player__stop-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.songhunt-audio-player__volume-icon,
+.songhunt-audio-player__volume-mute-icon {
+  width: 100%;
+  height: 100%;
+}

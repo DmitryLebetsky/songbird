@@ -1,0 +1,26 @@
+.header {
+  margin-bottom: #{$standart-indent * 2};
+  @include flex(
+    $direction: row, $justify-content: space-between, $align-items: center
+  );
+}
+
+.header__title {
+  color: $color-light;
+  @include themify() {
+    @include font(
+      $font-size: themed('defaultTitleFontSize'),
+      $font-family: themed('fontFamilyPrimary'),
+      $line-height: themed('titleLineHeight'),
+    );
+  }
+}
+
+.header__current-score {
+  color: $color-light;
+  @include themify() {
+    @include font(
+      $font-size: themed('defaultScoreFontSize'), $font-family: themed('fontFamilySecondary'),
+    )
+  }
+}
