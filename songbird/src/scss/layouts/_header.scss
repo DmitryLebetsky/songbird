@@ -9,7 +9,7 @@
   color: $color-light;
   @include themify() {
     @include font(
-      $font-size: themed('defaultTitleFontSize'),
+      $font-size: themed('defaultAppTitleFontSize'),
       $font-family: themed('fontFamilyPrimary'),
       $line-height: themed('titleLineHeight'),
     );

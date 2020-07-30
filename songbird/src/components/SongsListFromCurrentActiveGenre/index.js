@@ -1,0 +1,3 @@
+import SongsListFromCurrentActiveGenreView from './SongsListFromCurrentActiveGenre.jsx';
+
+export default SongsListFromCurrentActiveGenreView;

@@ -1,0 +1,69 @@
+.songs-from-current-active-genre-container {
+  height: 330px;
+  @include flex(
+    $direction: row,
+    $justify-content: space-between,
+    $align-items: center,
+  )
+}
+
+.songs-list-from-current-active-genre-container,
+.current-choosed-song-container {
+  height: 100%;
+  width: calc(50% - #{$standart-indent});
+}
+
+.songs-list-from-current-active-genre-container {
+  background-color: rgba($color: $color-light, $alpha: 0.5);
+  @include flex(
+    $direction: column,
+    $justify-content: flex-start,
+    $align-items: flex-start,
+  )
+}
+
+.song-from-current-active-genre-container {
+  width: 100%;
+  flex-grow: 1;
+  padding-left: $standart-indent;
+  cursor: pointer;
+  @include flex(
+    $direction: row,
+    $justify-content: flex-start,
+    $align-items: center,
+  );
+  @include media-hover {
+    &:hover &__title{
+      color: $color-light;
+    }
+    &:hover .song-from-current-active-genre-checkbox-container {
+      border: 1px solid $color-light;
+    }
+  }
+}
+
+.song-from-current-active-genre-checkbox-container {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin-right: $standart-indent;
+  border: 1px solid $color-dark;
+  transition: border-color $standart-transition-duration ease;
+  &_choosed {
+    border: 1px solid $color-light;
+  }
+}
+
+.song-from-current-active-genre-container__title {
+  color: $color-dark;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color $standart-transition-duration ease;
+  @include themify() {
+    @include font (
+      $font-family: themed('fontFamilySecondary'),
+      $font-size: themed('defaultSongFromCurrentActiveGenreFontSize'),
+    )
+  }
+}

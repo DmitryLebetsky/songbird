@@ -2,13 +2,15 @@ $themes: (
   rock: (
     appBackgroundImage: url('../../assets/images/backgrounds/rock-background.png'),
     fontFamilyPrimary: $rock-primary-font-family,
-    titleLineHeight: 144%,
     fontFamilySecondary: $rock-secondary-font-family,
-    defaultTitleFontSize: 6.5rem,
+    titleLineHeight: 144%,
+    defaultAppTitleFontSize: 6.5rem,
     defaultScoreFontSize: 3.5rem,
     defaultGenreFontSize: 5.4rem,
     defaultActiveSongFontSize: 6.4rem,
     defaultAudioPlayerFontSize: 2rem,
+    defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
+    defaultNoChoosedSongTitleFontSize: 2.5rem,
     colorPrimary: $rock-color-primary,
   )
 );

@@ -46,11 +46,17 @@
   .rhap_volume-button {
     width: 26px;
     height: 26px;
+    &:hover {
+      opacity: 1;
+    }
   }
   .rhap_volume-bar-area {
     * {
       background-color: $color-light;
     }
+  }
+  .rhap_volume-indicator {
+    opacity: 1;
   }
 }
 

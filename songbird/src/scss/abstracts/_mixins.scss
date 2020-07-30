@@ -16,6 +16,12 @@
 
 @mixin centred-background-image($background-image, $background-size: cover, $background-position: center) {
   background-image: $background-image;
-  $background-size: $background-size;
-  $background-position: $background-position;
+  background-size: $background-size;
+  background-position: $background-position;
+}
+
+// Media mixins
+
+@mixin media-hover() {
+  @media (hover: hover) { @content }
 }

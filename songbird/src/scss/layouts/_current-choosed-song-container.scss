@@ -1,0 +1,14 @@
+.current-choosed-song-container {
+  padding: $standart-indent;
+  background-color: rgba($color: $color-light, $alpha: 0.5);
+}
+
+.current-choosed-song-container__no-choosed-song-title {
+  color: $color-light;
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilySecondary'),
+      $font-size: themed('defaultNoChoosedSongTitleFontSize'),
+    )
+  }
+}

@@ -2,7 +2,7 @@
   min-height: 100vh;
   @include themify() {
     @include centred-background-image(
-      $background-image: themed('appBackgroundImage')
+      $background-image: themed('appBackgroundImage'),
     )
   }
 }

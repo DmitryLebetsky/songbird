@@ -1,5 +1,6 @@
 .active-song-container {
   height: #{220px + $standart-indent * 2};
+  margin-bottom: #{$standart-indent * 2};
   padding: $standart-indent;
   background-color: rgba($color: $color-light, $alpha: 0.5);
   @include flex(

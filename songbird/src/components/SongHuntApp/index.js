@@ -26,6 +26,7 @@ class SongHuntApp extends React.Component {
     currentActiveGenreData: this.genresData[0],
     currentActiveSong: getRandomElementFromArray(this.genresData[0].songs),
     currentScore: 0,
+    currentChoosedSong: null,
   }
 
   render() {
@@ -33,12 +34,14 @@ class SongHuntApp extends React.Component {
       currentActiveGenreData,
       currentScore,
       currentActiveSong,
+      currentChoosedSong,
     } = this.state;
     console.log(currentActiveSong);
     return <SongHuntAppView
       currentActiveGenreData={currentActiveGenreData}
       currentScore={currentScore}
-      currentActiveSong={currentActiveSong}/>
+      currentActiveSong={currentActiveSong}
+      currentChoosedSong={currentChoosedSong}/>
   }
 }
 

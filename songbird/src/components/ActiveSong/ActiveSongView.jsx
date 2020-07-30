@@ -14,7 +14,9 @@ const ActiveSongView = ({
         alt="song cover"
         className="active-song-container__cover"/>
       <div className="active-song-info-container">
-        <p className="active-song-info-container__title">{hideSong ? '******' : currentActiveSong.title}</p>
+        <p
+          title={hideSong ? null : currentActiveSong.title}
+          className="active-song-info-container__title">{hideSong ? '******' : currentActiveSong.title}</p>
           <AudioPlayer
             src={currentActiveSong.audioMinus}/>
       </div>
