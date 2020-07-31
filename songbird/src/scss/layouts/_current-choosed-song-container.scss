@@ -1,6 +1,11 @@
 .current-choosed-song-container {
   padding: $standart-indent;
   background-color: rgba($color: $color-light, $alpha: 0.5);
+  @include flex(
+    $direction: column,
+    $justify-content: flex-start,
+    $align-items: flex-start,
+  )
 }
 
 .current-choosed-song-container__no-choosed-song-title {
@@ -10,5 +15,78 @@
       $font-family: themed('fontFamilySecondary'),
       $font-size: themed('defaultNoChoosedSongTitleFontSize'),
     )
+  }
+}
+
+.current-choosed-song-info-container {
+  width: 100%;
+  margin-bottom: $standart-indent;
+  @include flex(
+    $direction: row,
+    $justify-content: flex-start,
+    $align-items: flex-start,
+  )
+}
+
+.current-choosed-song-info-container__cover {
+  width: 130px;
+  height: 130px;
+  margin-right: $standart-indent;
+  object-fit: cover;
+  object-position: center;
+}
+
+.current-choosed-song-main-info-container {
+  flex-basis: 100%;
+}
+
+.current-choosed-song-main-info-container__title {
+  color: $color-light;
+  border-bottom: 1px solid $color-light;
+  margin-bottom: $standart-indent;
+  @include themify() {
+    @include font (
+      $font-size: themed('defaultChoosedSongTitleFontSize'),
+      $font-family: themed('fontFamilySecondary'),
+    )
+  }
+}
+
+.current-choosed-song-info-container__description {
+  color: $color-dark;
+  @include themify() {
+    @include font (
+      $font-size: themed('defaultChoosedSongDescriptionFontSize'),
+      $font-family: themed('fontFamilySecondary'),
+    )
+  }
+}
+
+.songhung-app-wrapper .songhunt-audio-player.choosed-song-audioplayer {
+  .rhap_main-controls-button {
+    width: 70px;
+    height: 70px;
+  }
+  .rhap_time {
+    @include themify() {
+      font-size: themed('defaultChoosedSongAudioPlayerFontSize');
+    }
+  }
+  .rhap_progress-bar,
+  .rhap_volume-bar-area,
+  .rhap_volume-bar {
+    height: 2px;
+  }
+  .rhap_progress-indicator {
+    width: 12px;
+    height: 12px;
+  }
+  .rhap_volume-indicator {
+    width: 10px;
+    height: 10px;
+  }
+  .rhap_volume-button {
+    width: 23px;
+    height: 23px;
   }
 }

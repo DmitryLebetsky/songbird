@@ -1,43 +1,30 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import rightMarkBlack from '../../assets/images/icons/marks-icons/right-mark-black.png';
-import rightMarkWhite from '../../assets/images/icons/marks-icons/right-mark-white.png';
-import wrongMarkBlack from '../../assets/images/icons/marks-icons/wrong-mark-black.png';
-import wrongMarkWhite from '../../assets/images/icons/marks-icons/wrong-mark-white.png';
-
-const mapAllSongsFromCurrentActiveGenreToItems = (songData, currentChoosedSong) => {
+const mapAllSongsFromCurrentActiveGenreToItems = (songData, currentChoosedSong, songChoosed) => {
   const isSongChoosed = currentChoosedSong && currentChoosedSong.id === songData.id;
   const songFromCurrentActiveGenreContainerClasses = classNames({
     'song-from-current-active-genre-container': true,
     'song-from-current-active-genre-container_choosed': isSongChoosed,
   });
-  const songFromCurrentActiveGenreCheckboxContainerClasses = classNames({
-    'song-from-current-active-genre-checkbox-container': true,
-    'song-from-current-active-genre-checkbox-container_choosed': isSongChoosed,
-  });
+  const checkMarkItemClasses = classNames({
+    "song-from-current-active-genre-checkbox-container__mark": true,
+    "song-from-current-active-genre-checkbox-container__mark_right": songData.attempt === true,
+    "song-from-current-active-genre-checkbox-container__mark_wrong": songData.attempt === false,
+  })
+  console.log(songData);
   return (
     <li
+      onClick={() => songChoosed(songData)}
       title={songData.title}
       key={songData.id}
       className={songFromCurrentActiveGenreContainerClasses}>
-      <div className={songFromCurrentActiveGenreCheckboxContainerClasses}>
+      <div className="song-from-current-active-genre-checkbox-container">
         {
           songData.attempt === null
           ? null
           : (
-            <img 
-              alt="check mark"
-              className="song-from-current-active-genre-checkbox-container__mark"
-              src={
-                songData.attempt === true
-                ? (
-                  isSongChoosed ? rightMarkWhite : rightMarkBlack
-                )
-                : (
-                  isSongChoosed ? wrongMarkWhite : wrongMarkBlack
-                )
-              } />
+            <div className={checkMarkItemClasses} />
           )
         }
       </div>
@@ -49,12 +36,14 @@ const mapAllSongsFromCurrentActiveGenreToItems = (songData, currentChoosedSong) 
 const SongsListFromCurrentActiveGenreView = ({
   songsFromCurrentActiveGenre,
   currentChoosedSong,
+  songChoosed,
 }) => (
   <ul className="songs-list-from-current-active-genre-container">
-  {
-    songsFromCurrentActiveGenre.map((songData) => mapAllSongsFromCurrentActiveGenreToItems(songData, currentChoosedSong))
-  }
-</ul>
+    {
+      songsFromCurrentActiveGenre
+        .map((songData) => mapAllSongsFromCurrentActiveGenreToItems(songData, currentChoosedSong, songChoosed))
+    }
+  </ul>
 );
 
 export default SongsListFromCurrentActiveGenreView;

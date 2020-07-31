@@ -2,7 +2,10 @@ import React from 'react';
 
 import SongHuntAppView from './SongHuntAppView.jsx';
 
-import getRandomElementFromArray from '../../helpers/functions';
+import {
+  getRandomElementFromArray,
+  findEqualObjectInArrayByProperty,
+} from '../../helpers/functions';
 import genresData from '../../data/genresData';
 
 class SongHuntApp extends React.Component {
@@ -29,6 +32,42 @@ class SongHuntApp extends React.Component {
     currentChoosedSong: null,
   }
 
+  songChoosed = (choosedSong) => {
+    this.setState((state) => {
+      const [
+        originalChoosedSong,
+        indexOfOriginalChoosedSong,
+      ] = findEqualObjectInArrayByProperty(state.currentActiveGenreData.songs, choosedSong, 'id');
+      if (
+        (state.currentActiveGenreData.isCompleted)
+        || (!state.currentActiveGenreData.isCompleted && originalChoosedSong.attempt !== null)
+      ) {
+        return {
+          currentChoosedSong: { ...choosedSong },
+        };
+      } else {
+        const newState = {
+          currentActiveGenreData: {
+            ...state.currentActiveGenreData,
+            songs: [
+              ...state.currentActiveGenreData.songs.slice(0, indexOfOriginalChoosedSong),
+              { ...originalChoosedSong, attempt: originalChoosedSong.id === state.currentActiveSong.id, },
+              ...state.currentActiveGenreData.songs.slice(indexOfOriginalChoosedSong + 1),
+            ],
+            isCompleted: originalChoosedSong.id === state.currentActiveSong.id,
+          },
+          currentScore: state.currentScore,
+          currentChoosedSong: { ...choosedSong },
+        };
+        if (originalChoosedSong.id === state.currentActiveSong.id) {
+          const countOfAttempts = newState.currentActiveGenreData.songs.reduce((acc, song) => song.attempt === null ? acc : acc + 1, 0);
+          newState.currentScore += newState.currentActiveGenreData.songs.length - countOfAttempts;
+        }
+        return newState;
+      }
+    })
+  }
+
   render() {
     const {
       currentActiveGenreData,
@@ -41,7 +80,8 @@ class SongHuntApp extends React.Component {
       currentActiveGenreData={currentActiveGenreData}
       currentScore={currentScore}
       currentActiveSong={currentActiveSong}
-      currentChoosedSong={currentChoosedSong}/>
+      currentChoosedSong={currentChoosedSong}
+      songChoosed={this.songChoosed}/>
   }
 }
 

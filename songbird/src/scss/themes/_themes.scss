@@ -7,10 +7,13 @@ $themes: (
     defaultAppTitleFontSize: 6.5rem,
     defaultScoreFontSize: 3.5rem,
     defaultGenreFontSize: 5.4rem,
-    defaultActiveSongFontSize: 6.4rem,
+    defaultActiveSongFontSize: 5rem,
     defaultAudioPlayerFontSize: 2rem,
+    defaultChoosedSongAudioPlayerFontSize: 1.5rem,
     defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
     defaultNoChoosedSongTitleFontSize: 2.5rem,
+    defaultChoosedSongTitleFontSize: 2.5rem,
+    defaultChoosedSongDescriptionFontSize: 2rem,
     colorPrimary: $rock-color-primary,
   )
 );

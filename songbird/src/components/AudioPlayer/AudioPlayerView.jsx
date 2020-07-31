@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
@@ -10,30 +11,36 @@ import {ReactComponent as VolumeMuteAudioPlayerIcon} from '../../assets/images/i
 
 const AudioPlayerView = ({
   src,
-}) => (
-  <AudioPlayer
-    customIcons={{
-      play: <PlayAudioPlayerIcon className="songhunt-audio-player__play-icon"/>,
-      pause: <StopAudioPlayerIcon className="songhunt-audio-player__stop-icon"/>,
-      volume: <VolumeAudioPlayerIcon className="songhunt-audio-player__volume-icon" />,
-      volumeMute: <VolumeMuteAudioPlayerIcon className="songhunt-audio-player__volume-mute-icon" />,
-    }}
-    className="songhunt-audio-player"
-    layout="horizontal-reverse"
-    customAdditionalControls={[]}
-    customProgressBarSection={[
-      RHAP_UI.MAIN_CONTROLS,
-      RHAP_UI.CURRENT_TIME,
-      RHAP_UI.PROGRESS_BAR,
-      RHAP_UI.DURATION,
-      RHAP_UI.VOLUME,
-    ]}
-    customControlsSection={[]}
-    showJumpControls={false}
-    src={src}
-    onPlay={e => console.log("onPlay")}
-    // other props here
-  />
-);
+  className = '',
+}) => {
+  const audioPlayerClasses = classNames({
+    'songhunt-audio-player': true,
+    [className]: Boolean(className),
+  });
+  return (
+    <AudioPlayer
+      autoPlay={false}
+      customIcons={{
+        play: <PlayAudioPlayerIcon className="songhunt-audio-player__play-icon"/>,
+        pause: <StopAudioPlayerIcon className="songhunt-audio-player__stop-icon"/>,
+        volume: <VolumeAudioPlayerIcon className="songhunt-audio-player__volume-icon" />,
+        volumeMute: <VolumeMuteAudioPlayerIcon className="songhunt-audio-player__volume-mute-icon" />,
+      }}
+      className={audioPlayerClasses}
+      layout="horizontal-reverse"
+      customAdditionalControls={[]}
+      customProgressBarSection={[
+        RHAP_UI.MAIN_CONTROLS,
+        RHAP_UI.CURRENT_TIME,
+        RHAP_UI.PROGRESS_BAR,
+        RHAP_UI.DURATION,
+        RHAP_UI.VOLUME,
+      ]}
+      customControlsSection={[]}
+      showJumpControls={false}
+      src={src}
+    />
+  );
+};
 
 export default AudioPlayerView;

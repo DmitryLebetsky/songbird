@@ -1,5 +1,6 @@
 .songs-from-current-active-genre-container {
   height: 330px;
+  margin-bottom: $standart-indent;
   @include flex(
     $direction: row,
     $justify-content: space-between,
@@ -33,24 +34,64 @@
     $align-items: center,
   );
   @include media-hover {
-    &:hover &__title{
+    &:hover &__title {
       color: $color-light;
     }
     &:hover .song-from-current-active-genre-checkbox-container {
       border: 1px solid $color-light;
     }
+    &:hover .song-from-current-active-genre-checkbox-container__mark {
+      &_right {
+        background-image: url('../../assets/images/icons/marks-icons/right-mark-white.png');
+      }
+      &_wrong {
+        background-image: url('../../assets/images/icons/marks-icons/wrong-mark-white.png');
+      }
+    }
+  }
+  &_choosed {
+    .song-from-current-active-genre-container__title {
+      color: $color-light;
+    }
+    .song-from-current-active-genre-checkbox-container {
+      border: 1px solid $color-light;
+    }
+    .song-from-current-active-genre-checkbox-container__mark {
+      &_right {
+        background-image: url('../../assets/images/icons/marks-icons/right-mark-white.png');
+      }
+      &_wrong {
+        background-image: url('../../assets/images/icons/marks-icons/wrong-mark-white.png');
+      }
+    }
   }
 }
 
 .song-from-current-active-genre-checkbox-container {
+  position: relative;
   width: 15px;
   height: 15px;
   flex-shrink: 0;
   margin-right: $standart-indent;
   border: 1px solid $color-dark;
   transition: border-color $standart-transition-duration ease;
-  &_choosed {
-    border: 1px solid $color-light;
+}
+
+.song-from-current-active-genre-checkbox-container__mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image $standart-transition-duration ease;
+  &_right {
+    background-image: url('../../assets/images/icons/marks-icons/right-mark-black.png');
+  }
+  &_wrong {
+    background-image: url('../../assets/images/icons/marks-icons/wrong-mark-black.png');
   }
 }
 

@@ -36,9 +36,19 @@
   .rhap_volume-bar {
     height: 3px;
   }
+  .rhap_progress-indicator,
+  .rhap_volume-indicator {
+    top: 50%;
+    transform: translateY(-50%);
+  }
   .rhap_progress-indicator {
     width: 16px;
     height: 16px;
+  }
+  .rhap_volume-indicator {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
   }
   .rhap_volume-container {
     margin: 0 $standart-indent;
@@ -46,6 +56,8 @@
   .rhap_volume-button {
     width: 26px;
     height: 26px;
+    flex: 0 0 auto;
+    font-size: 0;
     &:hover {
       opacity: 1;
     }
@@ -54,9 +66,6 @@
     * {
       background-color: $color-light;
     }
-  }
-  .rhap_volume-indicator {
-    opacity: 1;
   }
 }
 

@@ -1,3 +1,7 @@
+
+// Vendors
+@import './scss/vendors/reset';
+
 // Abstracts
 @import './scss/abstracts/constants';
 @import './scss/abstracts/mixins';
@@ -18,6 +22,4 @@
 
 // Component
 @import './scss/components/songhunt-audio-player';
-
-// Vendors
-@import './scss/vendors/reset';
+@import './scss/components/next-category-button';

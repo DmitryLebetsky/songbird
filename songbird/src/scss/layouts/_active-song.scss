@@ -30,6 +30,7 @@
   margin-bottom: $standart-indent;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   @include themify() {
     @include font(
       $font-family: themed('fontFamilySecondary'),

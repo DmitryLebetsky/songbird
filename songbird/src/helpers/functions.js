@@ -1,3 +1,15 @@
 const getRandomElementFromArray = (array) => array[Math.floor(Math.random() * array.length)];
 
-export default getRandomElementFromArray;
+const findEqualObjectInArrayByProperty = (array, object, property) => {
+  const targetObject = array.find((objectFromArray) => objectFromArray[property] === object[property]);
+  const indexOfTargetObject = array.indexOf(targetObject);
+  return [
+    targetObject,
+    indexOfTargetObject,
+  ]
+};
+
+export {
+  getRandomElementFromArray,
+  findEqualObjectInArrayByProperty,
+};
