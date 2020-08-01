@@ -1,6 +1,6 @@
 .songs-from-current-active-genre-container {
   height: 330px;
-  margin-bottom: $standart-indent;
+  margin-bottom: #{$standart-indent * 2};
   @include flex(
     $direction: row,
     $justify-content: space-between,

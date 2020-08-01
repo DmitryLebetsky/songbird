@@ -6,7 +6,7 @@
   flex-wrap: $flex-wrap;
 }
 
-@mixin font($font-size, $font-weight: 400, $font-style: normal, $font-family: null, $line-height: 100%) {
+@mixin font($font-size, $font-weight: null, $font-style: null, $font-family: null, $line-height: null) {
   font-size: $font-size;
   font-weight: $font-weight;
   font-style: $font-style;

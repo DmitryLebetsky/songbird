@@ -1,7 +1,19 @@
 import React from 'react';
 
-const NextCatogoryButtonView = () => (
-  <button className="next-category-button">Next category</button>
+const NextCatogoryButtonView = ({
+  disabled,
+  moveToNextCategory,
+}) => (
+  <button
+    onClick={moveToNextCategory}
+    disabled={disabled}
+    className="next-category-button">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Next category
+    </button>
 );
 
 export default NextCatogoryButtonView;

@@ -12,8 +12,9 @@ const SongHuntAppView = ({
   currentActiveSong,
   currentChoosedSong,
   songChoosed,
+  moveToNextCategory,
 }) => (
-  <div className={`songhunt-app-container theme-${currentActiveGenreData.title.toLocaleLowerCase()}`}>
+  <div className={`songhunt-app-container theme-${currentActiveGenreData.title.toLocaleLowerCase().replace(/&/, 'and')}`}>
     <div className="songhung-app-wrapper">
       <Header
         currentScore={currentScore}/>
@@ -26,7 +27,9 @@ const SongHuntAppView = ({
         songsFromCurrentActiveGenre={currentActiveGenreData.songs}
         currentChoosedSong={currentChoosedSong}
         songChoosed={songChoosed}/>
-      <NextCatogoryButton />
+      <NextCatogoryButton
+        disabled={!currentActiveGenreData.isCompleted}
+        moveToNextCategory={moveToNextCategory}/>
     </div>
   </div>
 );

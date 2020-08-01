@@ -12,7 +12,6 @@ const mapAllSongsFromCurrentActiveGenreToItems = (songData, currentChoosedSong, 
     "song-from-current-active-genre-checkbox-container__mark_right": songData.attempt === true,
     "song-from-current-active-genre-checkbox-container__mark_wrong": songData.attempt === false,
   })
-  console.log(songData);
   return (
     <li
       onClick={() => songChoosed(songData)}

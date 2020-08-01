@@ -25,9 +25,8 @@ class SongHuntApp extends React.Component {
   genresData = this.prepareGenresDataForGame(genresData)
 
   state = {
-    currentGenresData: this.genresData,
-    currentActiveGenreData: this.genresData[0],
-    currentActiveSong: getRandomElementFromArray(this.genresData[0].songs),
+    currentActiveGenreData: { ...this.genresData[0] },
+    currentActiveSong: { ...getRandomElementFromArray(this.genresData[0].songs) },
     currentScore: 0,
     currentChoosedSong: null,
   }
@@ -68,6 +67,20 @@ class SongHuntApp extends React.Component {
     })
   }
 
+  moveToNextCategory = () => {
+    const [
+      ,
+      indexOfCurrentCategory,
+    ] = findEqualObjectInArrayByProperty(this.genresData, this.state.currentActiveGenreData, 'id');
+    if (this.genresData[indexOfCurrentCategory + 1] !== undefined) {
+      this.setState({
+        currentActiveGenreData: { ...this.genresData[indexOfCurrentCategory + 1] },
+        currentActiveSong: { ...getRandomElementFromArray(this.genresData[indexOfCurrentCategory + 1].songs) },
+        currentChoosedSong: null,
+      })
+    }
+  }
+
   render() {
     const {
       currentActiveGenreData,
@@ -81,7 +94,8 @@ class SongHuntApp extends React.Component {
       currentScore={currentScore}
       currentActiveSong={currentActiveSong}
       currentChoosedSong={currentChoosedSong}
-      songChoosed={this.songChoosed}/>
+      songChoosed={this.songChoosed}
+      moveToNextCategory={this.moveToNextCategory}/>
   }
 }
 

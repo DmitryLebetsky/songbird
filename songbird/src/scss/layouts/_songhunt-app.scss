@@ -1,5 +1,6 @@
 .songhunt-app-container {
   min-height: 100vh;
+  transition: background-image #{$standart-transition-duration * 4} ease;
   @include themify() {
     @include centred-background-image(
       $background-image: themed('appBackgroundImage'),
