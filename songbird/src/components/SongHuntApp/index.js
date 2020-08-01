@@ -29,6 +29,7 @@ class SongHuntApp extends React.Component {
     currentActiveSong: { ...getRandomElementFromArray(this.genresData[0].songs) },
     currentScore: 0,
     currentChoosedSong: null,
+    isAllGenresCompleted: false,
   }
 
   songChoosed = (choosedSong) => {
@@ -78,6 +79,10 @@ class SongHuntApp extends React.Component {
         currentActiveSong: { ...getRandomElementFromArray(this.genresData[indexOfCurrentCategory + 1].songs) },
         currentChoosedSong: null,
       })
+    } else {
+      this.setState({
+        isAllGenresCompleted: true,
+      });
     }
   }
 
@@ -87,9 +92,11 @@ class SongHuntApp extends React.Component {
       currentScore,
       currentActiveSong,
       currentChoosedSong,
+      isAllGenresCompleted
     } = this.state;
     console.log(currentActiveSong);
     return <SongHuntAppView
+      isAllGenresCompleted={isAllGenresCompleted}
       currentActiveGenreData={currentActiveGenreData}
       currentScore={currentScore}
       currentActiveSong={currentActiveSong}

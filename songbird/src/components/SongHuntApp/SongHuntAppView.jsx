@@ -5,6 +5,7 @@ import Genres from '../Genres';
 import ActiveSong from '../ActiveSong';
 import SongsFromCurrentActiveGenreContainer from '../SongsFromCurrentActiveGenreContainer';
 import NextCatogoryButton from '../NextCategoryButton';
+import Congrats from '../Congrats';
 
 const SongHuntAppView = ({
   currentActiveGenreData,
@@ -13,24 +14,37 @@ const SongHuntAppView = ({
   currentChoosedSong,
   songChoosed,
   moveToNextCategory,
+  isAllGenresCompleted,
 }) => (
   <div className={`songhunt-app-container theme-${currentActiveGenreData.title.toLocaleLowerCase().replace(/&/, 'and')}`}>
-    <div className="songhung-app-wrapper">
-      <Header
-        currentScore={currentScore}/>
-      <Genres
-        currentActiveGenreData={currentActiveGenreData}/>
-      <ActiveSong
-        currentActiveGenreData={currentActiveGenreData}
-        currentActiveSong={currentActiveSong}/>
-      <SongsFromCurrentActiveGenreContainer
-        songsFromCurrentActiveGenre={currentActiveGenreData.songs}
-        currentChoosedSong={currentChoosedSong}
-        songChoosed={songChoosed}/>
-      <NextCatogoryButton
-        disabled={!currentActiveGenreData.isCompleted}
-        moveToNextCategory={moveToNextCategory}/>
-    </div>
+      {
+        isAllGenresCompleted
+        ? (
+          <Congrats />
+        )
+        : (
+          <div className="songhung-app-wrapper">
+            <Header
+              currentScore={currentScore}/>
+            
+            <Genres
+              currentActiveGenreData={currentActiveGenreData}/>
+            
+            <ActiveSong
+            currentActiveGenreData={currentActiveGenreData}
+            currentActiveSong={currentActiveSong}/>
+
+            <SongsFromCurrentActiveGenreContainer
+            songsFromCurrentActiveGenre={currentActiveGenreData.songs}
+            currentChoosedSong={currentChoosedSong}
+            songChoosed={songChoosed}/>
+
+            <NextCatogoryButton
+            disabled={!currentActiveGenreData.isCompleted}
+            moveToNextCategory={moveToNextCategory}/>
+          </div>
+        )
+      }
   </div>
 );
 
