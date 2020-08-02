@@ -24,13 +24,15 @@ class SongHuntApp extends React.Component {
 
   genresData = this.prepareGenresDataForGame(genresData)
 
-  state = {
+  generateInitialState = () => ({
     currentActiveGenreData: { ...this.genresData[0] },
     currentActiveSong: { ...getRandomElementFromArray(this.genresData[0].songs) },
     currentScore: 0,
     currentChoosedSong: null,
     isAllGenresCompleted: false,
-  }
+  })
+
+  state = this.generateInitialState()
 
   songChoosed = (choosedSong) => {
     this.setState((state) => {
@@ -86,6 +88,10 @@ class SongHuntApp extends React.Component {
     }
   }
 
+  playAgain = () => {
+    this.setState(this.generateInitialState());
+  }
+
   render() {
     const {
       currentActiveGenreData,
@@ -94,8 +100,8 @@ class SongHuntApp extends React.Component {
       currentChoosedSong,
       isAllGenresCompleted
     } = this.state;
-    console.log(currentActiveSong);
     return <SongHuntAppView
+      playAgain={this.playAgain}
       isAllGenresCompleted={isAllGenresCompleted}
       currentActiveGenreData={currentActiveGenreData}
       currentScore={currentScore}

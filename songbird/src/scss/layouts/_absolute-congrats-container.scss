@@ -1,0 +1,126 @@
+@keyframes appearAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.absolute-congrats-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  animation: appearAnimation #{$standart-transition-duration * 4} ease-in-out;
+  @include themify() {
+    background: themed('colorPrimary');
+  }
+  @include flex(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center,
+  )
+}
+
+.absolute-congrats-container__particles {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.absolute-congrats-text-container {
+  z-index: 2;
+  @include flex(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center,
+  )
+}
+
+.absolute-congrats-text-container__title {
+  font-size: 12rem;
+  text-align: center;
+  line-height: 120%;
+  font-family: $jazz-primary-font-family;
+  color: $color-light;
+}
+
+.absolute-congrats-text-container__subtitle {
+  margin-bottom: $standart-indent;
+  font-size: 4rem;
+  text-align: center;
+  font-family: $jazz-secondary-font-family;
+  color: $color-light;
+}
+
+.absolute-congrats-text-container__play-again-button {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid $color-light;
+  border-radius: 10px;
+  outline: none;
+  color: $color-light;
+  font-size: 4rem;
+  background: transparent;
+  font-family: $jazz-secondary-font-family;
+  cursor: pointer;
+  transition: color $standart-transition-duration ease,
+              background-color $standart-transition-duration ease;
+  &:hover {
+    background-color: $color-light;
+    @include themify() {
+      color: themed('colorPrimary');
+    }
+  }
+}
+
+.absolute-congrats-container__mosque {
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 52.84015852047556vh;
+  background-image: url('../../assets/images/congrats-mosque.png');
+  background-repeat: repeat-x;
+  background-size: 158.5204755614267vh;
+  pointer-events: none;
+  animation: animateBackgroundPosition 10s linear infinite;
+}
+
+@keyframes animateBackgroundPosition {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 158.5204755614267vh;
+  }
+}
+
+.absolute-congrats-container__mosque:before {
+  z-index: 1;
+  content: '';
+  opacity: 0.1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70.45310435931308vh;
+  background-image: url('../../assets/images/congrats-mosque.png');
+  background-repeat: repeat-x;
+  background-size: 211.3606340819022vh;
+  pointer-events: none;
+  animation: animateBackgroundPositionReverse 40s linear infinite;
+}
+
+@keyframes animateBackgroundPositionReverse {
+  0% {
+    background-position: 211.3606340819022vh;
+  }
+  100% {
+    background-position: 0px;
+  }
+}

@@ -1,116 +1,46 @@
 .congrats-container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
+  padding: $standart-indent;
+  background-color: rgba($color: $color-light, $alpha: 0.5);
+  @include flex(
+    $direction: column,
+    $justify-content: flex-start,
+    $align-items: center,
+  )
+}
+
+.congrats-container__title {
+  color: $color-light;
+  margin-bottom: #{$standart-indent * 2};
   @include themify() {
-    background: themed('colorPrimary');
+    @include font(
+      $font-family: themed('fontFamilyPrimary'),
+      $font-size: themed('defaultCongratsTitleFontSize'),
+    )
   }
-  @include flex(
-    $direction: column,
-    $justify-content: center,
-    $align-items: center,
-  )
 }
 
-.congrats-container__particles {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.congrats-text-container {
-  z-index: 2;
-  @include flex(
-    $direction: column,
-    $justify-content: center,
-    $align-items: center,
-  )
-}
-
-.congrats-text-container__title {
-  font-size: 12rem;
-  text-align: center;
-  line-height: 120%;
-  font-family: $jazz-primary-font-family;
+.congrats-container__subtitle {
   color: $color-light;
-}
-
-.congrats-text-container__subtitle {
-  margin-bottom: $standart-indent;
-  font-size: 4rem;
+  margin-bottom: #{$standart-indent * 2};
   text-align: center;
-  font-family: $jazz-secondary-font-family;
-  color: $color-light;
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilySecondary'),
+      $font-size: themed('defaultCongratsSubtitleFontSize'),
+    )
+  }
 }
 
 .congrats-container__play-again-button {
   width: 300px;
-  margin: 0 auto;
-  border: 1px solid $color-light;
-  border-radius: 10px;
-  outline: none;
-  color: $color-light;
-  font-size: 4rem;
-  background: transparent;
-  font-family: $jazz-secondary-font-family;
-  cursor: pointer;
-  transition: color $standart-transition-duration ease,
-              background-color $standart-transition-duration ease;
-  &:hover {
-    background-color: $color-light;
-    @include themify() {
-      color: themed('colorPrimary');
-    }
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilySecondary'),
+      $font-size: themed('defaultCongratsPlayAgainButtonFontSize'),
+    )
   }
-}
-
-.mosque {
-  z-index: 3;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 52.84015852047556vh;
-  background-image: url('../../assets/images/congrats-mosque.png');
-  background-repeat: repeat-x;
-  background-size: 158.5204755614267vh;
-  pointer-events: none;
-  animation: animateBackgroundPosition 10s linear infinite;
-}
-
-@keyframes animateBackgroundPosition {
-  0% {
-    background-position: 0px;
-  }
-  100% {
-    background-position: 158.5204755614267vh;
-  }
-}
-
-.mosque:before {
-  z-index: 1;
-  content: '';
-  opacity: 0.1;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 70.45310435931308vh;
-  background-image: url('../../assets/images/congrats-mosque.png');
-  background-repeat: repeat-x;
-  background-size: 211.3606340819022vh;
-  pointer-events: none;
-  animation: animateBackgroundPositionReverse 40s linear infinite;
-}
-
-@keyframes animateBackgroundPositionReverse {
-  0% {
-    background-position: 211.3606340819022vh;
-  }
-  100% {
-    background-position: 0px;
-  }
+  @include neon-button(
+    $text-color: $color-light,
+    $hover-text-color: $color-light,
+  );
 }

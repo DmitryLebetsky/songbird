@@ -1,13 +1,5 @@
 .next-category-button {
-  position: relative;
-  display: inline-block;
   width: 100%;
-  color: rgba($color: $color-light, $alpha: 0.5);
-  border: 0;
-  outline: none;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: transparent;
   @include themify() {
     @include font(
       $font-size: themed('defaultNextCategoryButtonFontSize'),
@@ -25,108 +17,8 @@
       opacity: 0;
     }
   }
-  &:enabled {
-    transition: opacity #{$standart-transition-duration * 2} ease,
-                background-color #{$standart-transition-duration * 2} ease,
-                box-shadow #{$standart-transition-duration * 2} ease,
-                color #{$standart-transition-duration * 2} ease;
-  }
-  span {
-    opacity: 1;
-    position: absolute;
-    display: block;
-    transition: opacity #{$standart-transition-duration * 2} ease;
-  }
-  span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    @include themify() {
-      background: linear-gradient(90deg, transparent, themed('colorPrimary'));
-    }
-    animation: animate1 1s linear infinite;
-  }
-  span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    @include themify() {
-      background: linear-gradient(180deg, transparent, themed('colorPrimary'));
-    }
-    animation: animate2 1s linear infinite;
-    animation-delay: 0.25s;
-  }
-  span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    @include themify() {
-      background: linear-gradient(270deg, transparent, themed('colorPrimary'));
-    }
-    animation: animate3 1s linear infinite;
-    animation-delay: 0.5s;
-  }
-  span:nth-child(4) {
-    bottom: 100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    @include themify() {
-      background: linear-gradient(360deg, transparent, themed('colorPrimary'));
-    }
-    animation: animate4 1s linear infinite;
-    animation-delay: 0.75s;
-  }
-  &:enabled:hover {
-    color: $color-light;
-    @include themify() {
-      box-shadow: 0 0 5px themed('colorPrimary'),
-                  0 0 25px themed('colorPrimary'),
-                  0 0 50px themed('colorPrimary'),
-                  0 0 200px themed('colorPrimary');
-      background-color: themed('colorPrimary');
-    }
-    span {
-      opacity: 0;
-    }
-  }
-}
-
-@keyframes animate1 {
-  0% {
-    left: -100%;
-  }
-  50%,100% {
-    left: 100%;
-  }
-}
-
-@keyframes animate2 {
-  0% {
-    top: -100%;
-  }
-  50%,100% {
-    top: 100%;
-  }
-}
-
-@keyframes animate3 {
-  0% {
-    right: -100%;
-  }
-  50%,100% {
-    right: 100%;
-  }
-}
-
-@keyframes animate4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,100% {
-    bottom: 100%;
-  }
+  @include neon-button(
+    $text-color: rgba($color: $color-light, $alpha: 0.5),
+    $hover-text-color: $color-light,
+  );
 }
