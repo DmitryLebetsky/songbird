@@ -17,7 +17,7 @@
   }
   @include flex(
     $direction: column,
-    $justify-content: center,
+    $justify-content: flex-end,
     $align-items: center,
   )
 }
@@ -33,6 +33,7 @@
 
 .absolute-congrats-text-container {
   z-index: 2;
+  margin: #{$standart-indent * 2} #{$standart-indent * 2} calc(52.84015852047556vh - #{$standart-indent * 6}) #{$standart-indent * 2};
   @include flex(
     $direction: column,
     $justify-content: center,
@@ -46,6 +47,12 @@
   line-height: 120%;
   font-family: $jazz-primary-font-family;
   color: $color-light;
+  @include media-tablet {
+    font-size: 10rem;
+  }
+  @include media-mobile {
+    font-size: 9rem;
+  }
 }
 
 .absolute-congrats-text-container__subtitle {
@@ -54,6 +61,12 @@
   text-align: center;
   font-family: $jazz-secondary-font-family;
   color: $color-light;
+  @include media-small-laptop {
+    font-size: 3.5rem;
+  }
+  @include media-mobile {
+    font-size: 3.2rem;
+  }
 }
 
 .absolute-congrats-text-container__play-again-button {
@@ -74,6 +87,9 @@
     @include themify() {
       color: themed('colorPrimary');
     }
+  }
+  @include media-mobile {
+    width: 100%;
   }
 }
 

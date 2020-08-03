@@ -12,4 +12,11 @@
   margin: 0 auto;
   padding: #{$standart-indent * 2} 0;
   max-width: $laptop-width;
+  @media (max-width: $laptop-width + $standart-indent * 4) {
+    margin: 0 #{$standart-indent * 2};
+  }
+  @media (max-width: $tablet-width) {
+    margin: 0 #{$standart-indent};
+    padding: #{$standart-indent} 0;
+  }
 }

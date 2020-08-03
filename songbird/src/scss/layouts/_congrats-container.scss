@@ -1,6 +1,7 @@
 .congrats-container {
   padding: $standart-indent;
   background-color: rgba($color: $color-light, $alpha: 0.5);
+  animation: appearAnimation #{$standart-transition-duration * 2} ease-in-out;
   @include flex(
     $direction: column,
     $justify-content: flex-start,
@@ -29,6 +30,16 @@
       $font-size: themed('defaultCongratsSubtitleFontSize'),
     )
   }
+  @include media-small-laptop {
+    @include themify() {
+      font-size: themed('smallLaptopCongratsSubtitleFontSize');
+    }
+  }
+  @include media-tablet {
+    @include themify() {
+      font-size: themed('tabletCongratsSubtitleFontSize');
+    }
+  }
 }
 
 .congrats-container__play-again-button {
@@ -43,4 +54,7 @@
     $text-color: $color-light,
     $hover-text-color: $color-light,
   );
+  @include media-mobile {
+    width: 100%;
+  }
 }

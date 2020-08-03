@@ -10,20 +10,56 @@
     display: none;
   }
   .rhap_play-pause-button {
-    width: 100px;
-    height: 100px;
+    width: 74.8046875px;
+    height: 74.8046875px;
+    margin: 0;
+    margin-right: #{$standart-indent / 3};
+    @include media-small-laptop {
+      width: 59.84375px;
+      height: 59.84375px;
+    }
+    @include media-tablet {
+      width: 48.623046875px;
+      height: 48.623046875px;
+    }
+    @include media-mobile {
+      width: 40.623047px;
+      height: 40.623047px;
+    }
     &:hover {
       opacity: 1;
     }
   }
-  .rhap_time {
-    color: $color-light;
+  .rhap_main-controls {
+    margin: 0;
+  }
+  .rhap_additional-controls {
+    position: relative;
+    padding: 1em 0;
     @include themify() {
       @include font(
         $font-family: themed('fontFamilySecondary'),
         $font-size: themed('defaultAudioPlayerFontSize'),
       )
     }
+    @include media-small-laptop {
+      @include themify() {
+        font-size: themed('smallLaptopAudioPlayerFontSize');
+      }
+    }
+  }
+  .rhap_time {
+    position: absolute;
+    bottom: 0;
+    color: $color-light;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  .rhap_current-time {
+    left: 0;
+  }
+  .rhap_total-time {
+    right: 0;
   }
   .rhap_progress-container {
     margin: 0 $standart-indent;
@@ -31,10 +67,12 @@
       background-color: $color-light;
     }
   }
-  .rhap_progress-bar,
+  .rhap_progress-bar {
+    height: 3px;
+  }
   .rhap_volume-bar-area,
   .rhap_volume-bar {
-    height: 3px;
+    height: 2px;
   }
   .rhap_progress-indicator,
   .rhap_volume-indicator {
@@ -44,20 +82,47 @@
   .rhap_progress-indicator {
     width: 16px;
     height: 16px;
+    @include media-small-laptop {
+      width: 13px;
+      height: 13px;
+    }
+    @include media-tablet {
+      width: 11px;
+      height: 11px;
+    }
   }
   .rhap_volume-indicator {
     width: 12px;
     height: 12px;
     opacity: 1;
+    @include media-small-laptop {
+      width: 9px;
+      height: 9px;
+    }
+    @include media-tablet {
+      width: 8px;
+      height: 8px;
+    }
   }
   .rhap_volume-container {
-    margin: 0 $standart-indent;
+    @include media-tablet {
+      flex-basis: 70px;
+    }
   }
   .rhap_volume-button {
     width: 26px;
     height: 26px;
+    margin-right: #{$standart-indent / 3};
     flex: 0 0 auto;
     font-size: 0;
+    @include media-small-laptop {
+      width: 23px;
+      height: 23px;
+    }
+    @include media-tablet {
+      width: 21px;
+      height: 21px;
+    }
     &:hover {
       opacity: 1;
     }

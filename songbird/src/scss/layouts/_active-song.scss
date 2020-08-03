@@ -1,40 +1,74 @@
 .active-song-container {
-  height: #{220px + $standart-indent * 2};
+  height: auto;
   margin-bottom: #{$standart-indent * 2};
   padding: $standart-indent;
   background-color: rgba($color: $color-light, $alpha: 0.5);
   @include flex(
     $direction: row,
     $justify-content: flex-start,
-    $align-items: center,
-  )
+    $align-items: flex-start,
+  );
+  @include media-mobile {
+    @include flex(
+      $direction: column,
+      $justify-content: flex-start,
+      $align-items: center,
+    )
+  }
 }
 
 .active-song-container__cover {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   margin-right: $standart-indent;
   object-fit: cover;
   object-position: center;
+  @include media-small-laptop {
+    width: 180px;
+    height: 180px;
+  }
+  @include media-tablet {
+    width: 130px;
+    height: 130px;
+  }
+  @include media-mobile {
+    margin-right: 0;
+    margin-bottom: $standart-indent;
+  }
 }
 
 .active-song-info-container {
   height: 100%;
   flex-basis: 100%;
-  overflow: hidden;
+  @include media-mobile {
+    width: 100%;
+    flex-basis: auto;
+  }
 }
 
 .active-song-info-container__title {
   color: $color-light;
   border-bottom: 1px solid $color-light;
   margin-bottom: $standart-indent;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   @include themify() {
     @include font(
       $font-family: themed('fontFamilySecondary'),
       $font-size: themed('defaultActiveSongFontSize'),
     )
+  }
+  @include media-small-laptop {
+    @include themify() {
+      font-size: themed('smallLaptopActiveSongFontSize');
+    }
+  }
+  @include media-tablet {
+    @include themify() {
+      font-size: themed('tabletActiveSongFontSize');
+    }
+  }
+  @include media-mobile {
+    @include themify() {
+      font-size: themed('mobileActiveSongFontSize');
+    }
   }
 }

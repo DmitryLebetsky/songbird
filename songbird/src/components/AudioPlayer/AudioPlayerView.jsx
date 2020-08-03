@@ -28,12 +28,14 @@ const AudioPlayerView = ({
       }}
       className={audioPlayerClasses}
       layout="horizontal-reverse"
-      customAdditionalControls={[]}
-      customProgressBarSection={[
-        RHAP_UI.MAIN_CONTROLS,
+      customAdditionalControls={[
         RHAP_UI.CURRENT_TIME,
         RHAP_UI.PROGRESS_BAR,
         RHAP_UI.DURATION,
+      ]}
+      customProgressBarSection={[
+        RHAP_UI.MAIN_CONTROLS,
+        RHAP_UI.ADDITIONAL_CONTROLS,
         RHAP_UI.VOLUME,
       ]}
       customControlsSection={[]}

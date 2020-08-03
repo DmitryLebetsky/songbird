@@ -5,13 +5,20 @@
     $direction: row,
     $justify-content: space-between,
     $align-items: center,
-  )
+  );
+  @include media-small-laptop {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .songs-list-from-current-active-genre-container,
 .current-choosed-song-container {
   height: 100%;
   width: calc(50% - #{$standart-indent});
+  @include media-small-laptop {
+    width: 100%;
+  }
 }
 
 .songs-list-from-current-active-genre-container {
@@ -20,7 +27,10 @@
     $direction: column,
     $justify-content: flex-start,
     $align-items: flex-start,
-  )
+  );
+  @include media-small-laptop {
+    margin-bottom: #{$standart-indent * 2};
+  }
 }
 
 .song-from-current-active-genre-container {
@@ -49,6 +59,9 @@
       }
     }
   }
+  @include media-small-laptop {
+    padding: $standart-indent;
+  }
   &_choosed {
     .song-from-current-active-genre-container__title {
       color: $color-light;
@@ -75,6 +88,10 @@
   margin-right: $standart-indent;
   border: 1px solid $color-dark;
   transition: border-color $standart-transition-duration ease;
+  @include media-small-laptop {
+    width: 13px;
+    height: 13px;
+  }
 }
 
 .song-from-current-active-genre-checkbox-container__mark {
@@ -87,6 +104,10 @@
   background-size: cover;
   background-position: center;
   transition: background-image $standart-transition-duration ease;
+  @include media-small-laptop {
+    width: 20px;
+    height: 20px;
+  }
   &_right {
     background-image: url('../../assets/images/icons/marks-icons/right-mark-black.png');
   }
@@ -97,14 +118,16 @@
 
 .song-from-current-active-genre-container__title {
   color: $color-dark;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   transition: color $standart-transition-duration ease;
   @include themify() {
     @include font (
       $font-family: themed('fontFamilySecondary'),
       $font-size: themed('defaultSongFromCurrentActiveGenreFontSize'),
     )
+  }
+  @include media-small-laptop {
+    @include themify() {
+      font-size: themed('smallLaptopSongFromCurrentActiveGenreFontSize');
+    }
   }
 }

@@ -26,6 +26,18 @@
   @media (hover: hover) { @content; }
 }
 
+@mixin media-small-laptop {
+  @media (max-width: $small-laptop-width) { @content; }
+}
+
+@mixin media-tablet {
+  @media (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-mobile {
+  @media (max-width: $mobile-width) { @content; }
+}
+
 /* Style mixins */
 
 @keyframes animate1 {
@@ -72,8 +84,8 @@
   outline: none;
   cursor: pointer;
   overflow: hidden;
-  background-color: transparent;
   &:enabled {
+    background-color: transparent;
     transition: opacity #{$standart-transition-duration * 2} ease,
                 background-color #{$standart-transition-duration * 2} ease,
                 box-shadow #{$standart-transition-duration * 2} ease,

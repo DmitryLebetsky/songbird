@@ -3,113 +3,274 @@ $themes: (
     appBackgroundImage: url('../../assets/images/backgrounds/rock-background.png'),
     fontFamilyPrimary: $rock-primary-font-family,
     fontFamilySecondary: $rock-secondary-font-family,
+
     titleLineHeight: 144%,
-    defaultAppTitleFontSize: 6.5rem,
+    defaultAppTitleFontSize: 6rem,
+    smallLaptopAppTitleFontSize: 5.5rem,
+    tabletAppTitleFontSize: 4.5rem,
+
     defaultScoreFontSize: 3.5rem,
-    defaultGenreFontSize: 5.4rem,
+    smallLaptopScoreFontSize: 3rem,
+    tabletScoreFontSize: 2.7rem,
+    mobileScoreFontSize: 3rem,
+
+    defaultGenreFontSize: 4.5rem,
+    smallLaptopGenreFontSize: 4rem,
+    tabletGenreFontSize: 3.3rem,
+
     defaultActiveSongFontSize: 4rem,
+    smallLaptopActiveSongFontSize: 3.7rem,
+    tabletActiveSongFontSize: 2.8rem,
+    mobileActiveSongFontSize: 2.5rem,
+
     defaultAudioPlayerFontSize: 2rem,
+    smallLaptopAudioPlayerFontSize: 1.5rem,
+
     defaultChoosedSongAudioPlayerFontSize: 1.5rem,
+
     defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
+    smallLaptopSongFromCurrentActiveGenreFontSize: 2.2rem,
+
     defaultNoChoosedSongTitleFontSize: 2.5rem,
+
     defaultChoosedSongTitleFontSize: 2.5rem,
+    mobileChoosedSongTitleFontSize: 2.5rem,
+
     defaultChoosedSongDescriptionFontSize: 2rem,
+
     defaultNextCategoryButtonFontSize: 4rem,
+    mobileNextCategoryButtonFontSize: 3rem,
+
     colorPrimary: $rock-color-primary,
   ),
   pop: (
     appBackgroundImage: url('../../assets/images/backgrounds/pop-background.png'),
     fontFamilyPrimary: $pop-primary-font-family,
     fontFamilySecondary: $pop-secondary-font-family,
+
     titleLineHeight: 111%,
-    defaultAppTitleFontSize: 11.5rem,
+    defaultAppTitleFontSize: 10.5rem,
+    smallLaptopAppTitleFontSize: 9rem,
+    tabletAppTitleFontSize: 8.5rem,
+
     defaultScoreFontSize: 4rem,
-    defaultGenreFontSize: 5.4rem,
-    defaultActiveSongFontSize: 4rem,
+    smallLaptopScoreFontSize: 3rem,
+    tabletScoreFontSize: 3rem,
+    mobileScoreFontSize: 2.9rem,
+
+    defaultGenreFontSize: 4.3rem,
+    smallLaptopGenreFontSize: 4rem,
+    tabletGenreFontSize: 3.3rem,
+
+    defaultActiveSongFontSize: 3.7rem,
+    smallLaptopActiveSongFontSize: 3.3rem,
+    tabletActiveSongFontSize: 2.8rem,
+    mobileActiveSongFontSize: 2.5rem,
+
     defaultAudioPlayerFontSize: 2rem,
+    smallLaptopAudioPlayerFontSize: 1.5rem,
+
     defaultChoosedSongAudioPlayerFontSize: 1.5rem,
-    defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
+
+    defaultSongFromCurrentActiveGenreFontSize: 2.2rem,
+    smallLaptopSongFromCurrentActiveGenreFontSize: 2rem,
+
     defaultNoChoosedSongTitleFontSize: 2.5rem,
-    defaultChoosedSongTitleFontSize: 3rem,
+
+    defaultChoosedSongTitleFontSize: 2.7rem,
+    mobileChoosedSongTitleFontSize: 2.5rem,
+
     defaultChoosedSongDescriptionFontSize: 2rem,
+
     defaultNextCategoryButtonFontSize: 4rem,
+    mobileNextCategoryButtonFontSize: 3rem,
+
     colorPrimary: $pop-color-primary,
   ),
   folk: (
     appBackgroundImage: url('../../assets/images/backgrounds/folk-background.jpg'),
     fontFamilyPrimary: $folk-primary-font-family,
     fontFamilySecondary: $folk-secondary-font-family,
+
     titleLineHeight: 100%,
     defaultAppTitleFontSize: 7.5rem,
+    smallLaptopAppTitleFontSize: 6.5rem,
+    tabletAppTitleFontSize: 5.5rem,
+
     defaultScoreFontSize: 4rem,
-    defaultGenreFontSize: 5.4rem,
+    smallLaptopScoreFontSize: 3.5rem,
+    tabletScoreFontSize: 3.2rem,
+    mobileScoreFontSize: 2.9rem,
+
+    defaultGenreFontSize: 4.7rem,
+    smallLaptopGenreFontSize: 4rem,
+    tabletGenreFontSize: 3.3rem,
+
     defaultActiveSongFontSize: 4rem,
+    smallLaptopActiveSongFontSize: 3.7rem,
+    tabletActiveSongFontSize: 3.2rem,
+    mobileActiveSongFontSize: 3rem,
+
     defaultAudioPlayerFontSize: 2rem,
+    smallLaptopAudioPlayerFontSize: 1.5rem,
+
     defaultChoosedSongAudioPlayerFontSize: 1.5rem,
+
     defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
+    smallLaptopSongFromCurrentActiveGenreFontSize: 2.2rem,
+
     defaultNoChoosedSongTitleFontSize: 2.5rem,
+
     defaultChoosedSongTitleFontSize: 3rem,
+    mobileChoosedSongTitleFontSize: 3rem,
+
     defaultChoosedSongDescriptionFontSize: 2rem,
+
     defaultNextCategoryButtonFontSize: 5rem,
+    mobileNextCategoryButtonFontSize: 4rem,
+
     colorPrimary: $folk-color-primary,
   ),
  randb: (
     appBackgroundImage: url('../../assets/images/backgrounds/R&B-background.png'),
     fontFamilyPrimary: $RandB-primary-font-family,
     fontFamilySecondary: $RandB-secondary-font-family,
+
     titleLineHeight: 117%,
     defaultAppTitleFontSize: 9rem,
+    smallLaptopAppTitleFontSize: 8rem,
+    tabletAppTitleFontSize: 7rem,
+
     defaultScoreFontSize: 3.5rem,
-    defaultGenreFontSize: 5rem,
-    defaultActiveSongFontSize: 4rem,
+    smallLaptopScoreFontSize: 3rem,
+    tabletScoreFontSize: 2.7rem,
+    mobileScoreFontSize: 2.4rem,
+
+    defaultGenreFontSize: 4.3rem,
+    smallLaptopGenreFontSize: 3.6rem,
+    tabletGenreFontSize: 2.9rem,
+
+    defaultActiveSongFontSize: 3.8rem,
+    smallLaptopActiveSongFontSize: 3.5rem,
+    tabletActiveSongFontSize: 2.8rem,
+    mobileActiveSongFontSize: 2.5rem,
+
     defaultAudioPlayerFontSize: 2rem,
+    smallLaptopAudioPlayerFontSize: 1.5rem,
+
     defaultChoosedSongAudioPlayerFontSize: 1.5rem,
-    defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
+
+    defaultSongFromCurrentActiveGenreFontSize: 2.3rem,
+    smallLaptopSongFromCurrentActiveGenreFontSize: 2rem,
+
     defaultNoChoosedSongTitleFontSize: 2.5rem,
+
     defaultChoosedSongTitleFontSize: 2.7rem,
+    mobileChoosedSongTitleFontSize: 2.5rem,
+
     defaultChoosedSongDescriptionFontSize: 2rem,
+
     defaultNextCategoryButtonFontSize: 3rem,
+    mobileNextCategoryButtonFontSize: 3rem,
+
     colorPrimary: $RandB-color-primary,
   ),
   country: (
     appBackgroundImage: url('../../assets/images/backgrounds/country-background.png'),
     fontFamilyPrimary: $country-primary-font-family,
     fontFamilySecondary: $country-secondary-font-family,
+
     titleLineHeight: 117%,
-    defaultAppTitleFontSize: 9rem,
+    defaultAppTitleFontSize: 7.5rem,
+    smallLaptopAppTitleFontSize: 7rem,
+    tabletAppTitleFontSize: 6rem,
+
     defaultScoreFontSize: 4rem,
-    defaultGenreFontSize: 5rem,
+    smallLaptopScoreFontSize: 3.5rem,
+    tabletScoreFontSize: 3.2rem,
+    mobileScoreFontSize: 2.9rem,
+
+    defaultGenreFontSize: 4.3rem,
+    smallLaptopGenreFontSize: 3.6rem,
+    tabletGenreFontSize: 2.9rem,
+
     defaultActiveSongFontSize: 4rem,
+    smallLaptopActiveSongFontSize: 3.7rem,
+    tabletActiveSongFontSize: 2.8rem,
+    mobileActiveSongFontSize: 2.7rem,
+
     defaultAudioPlayerFontSize: 2.5rem,
+    smallLaptopAudioPlayerFontSize: 2rem,
+
     defaultChoosedSongAudioPlayerFontSize: 2rem,
+
     defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
+    smallLaptopSongFromCurrentActiveGenreFontSize: 2.2rem,
+
     defaultNoChoosedSongTitleFontSize: 2.5rem,
+
     defaultChoosedSongTitleFontSize: 2.7rem,
+    mobileChoosedSongTitleFontSize: 2.7rem,
+
     defaultChoosedSongDescriptionFontSize: 2rem,
+
     defaultNextCategoryButtonFontSize: 4rem,
+    mobileNextCategoryButtonFontSize: 3rem,
+
     colorPrimary: $country-color-primary,
   ),
   jazz: (
     appBackgroundImage: url('../../assets/images/backgrounds/jazz-background.jpg'),
     fontFamilyPrimary: $jazz-primary-font-family,
     fontFamilySecondary: $jazz-secondary-font-family,
+
     titleLineHeight: 117%,
     defaultAppTitleFontSize: 9rem,
+    smallLaptopAppTitleFontSize: 8rem,
+    tabletAppTitleFontSize: 7rem,
+
     defaultScoreFontSize: 4rem,
+    smallLaptopScoreFontSize: 3.5rem,
+    tabletScoreFontSize: 3.2rem,
+    mobileScoreFontSize: 3.5rem,
+
     defaultGenreFontSize: 5rem,
+    smallLaptopGenreFontSize: 4rem,
+    tabletGenreFontSize: 3.8rem,
+
     defaultActiveSongFontSize: 4rem,
+    smallLaptopActiveSongFontSize: 3.7rem,
+    tabletActiveSongFontSize: 3.3rem,
+    mobileActiveSongFontSize: 3rem,
+
     defaultAudioPlayerFontSize: 2.5rem,
+    smallLaptopAudioPlayerFontSize: 2rem,
+
     defaultChoosedSongAudioPlayerFontSize: 2rem,
-    defaultSongFromCurrentActiveGenreFontSize: 2.5rem,
+
+    defaultSongFromCurrentActiveGenreFontSize: 2.7rem,
+    smallLaptopSongFromCurrentActiveGenreFontSize: 2.7rem,
+
     defaultNoChoosedSongTitleFontSize: 2.5rem,
-    defaultChoosedSongTitleFontSize: 2.7rem,
+
+    defaultChoosedSongTitleFontSize: 3rem,
+    mobileChoosedSongTitleFontSize: 3rem,
+
     defaultChoosedSongDescriptionFontSize: 2.4rem,
+
     defaultNextCategoryButtonFontSize: 4rem,
+    mobileNextCategoryButtonFontSize: 3rem,
+
     defaultCongratsTitleFontSize: 6rem,
-    defaultCongratsSubtitleFontSize: 4rem,
+
+    defaultCongratsSubtitleFontSize: 3.5rem,
+    smallLaptopCongratsSubtitleFontSize: 3.2rem,
+    tabletCongratsSubtitleFontSize: 3rem,
+
     defaultCongratsPlayAgainButtonFontSize: 4rem,
+
     colorPrimary: $jazz-color-primary,
-  )
+  ),
 );
 
 @mixin themify($themes: $themes) {

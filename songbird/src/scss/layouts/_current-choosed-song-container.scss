@@ -25,7 +25,14 @@
     $direction: row,
     $justify-content: flex-start,
     $align-items: flex-start,
-  )
+  );
+  @include media-mobile {
+    @include flex(
+      $direction: column,
+      $justify-content: flex-start,
+      $align-items: center,
+    )
+  }
 }
 
 .current-choosed-song-info-container__cover {
@@ -34,10 +41,24 @@
   margin-right: $standart-indent;
   object-fit: cover;
   object-position: center;
+  @include media-small-laptop {
+    width: 115px;
+    height: 115px;
+  }
+  @include media-mobile {
+    width: 130px;
+    height: 130px;
+    margin-right: 0;
+    margin-bottom: $standart-indent;
+  }
 }
 
 .current-choosed-song-main-info-container {
   flex-basis: 100%;
+  @include media-mobile {
+    flex-basis: auto;
+    width: 100%;
+  }
 }
 
 .current-choosed-song-main-info-container__title {
@@ -49,6 +70,11 @@
       $font-size: themed('defaultChoosedSongTitleFontSize'),
       $font-family: themed('fontFamilySecondary'),
     )
+  }
+  @include media-mobile {
+    @include themify() {
+      font-size: themed('mobileChoosedSongTitleFontSize');
+    }
   }
 }
 
@@ -64,10 +90,18 @@
 
 .songhung-app-wrapper .songhunt-audio-player.choosed-song-audioplayer {
   .rhap_main-controls-button {
-    width: 70px;
-    height: 70px;
+    width: 52.36328125px;
+    height: 52.36328125px;
+    @include media-small-laptop {
+      width: 44.8828125px;
+      height: 44.8828125px;
+    }
+    @include media-mobile {
+      width: 40.882813px;
+      height: 40.882813px;
+    }
   }
-  .rhap_time {
+  .rhap_additional-controls {
     @include themify() {
       font-size: themed('defaultChoosedSongAudioPlayerFontSize');
     }
@@ -80,13 +114,29 @@
   .rhap_progress-indicator {
     width: 12px;
     height: 12px;
+    @include media-mobile {
+      width: 11px;
+      height: 11px;
+    }
   }
   .rhap_volume-indicator {
     width: 10px;
     height: 10px;
+    @include media-small-laptop {
+      width: 9px;
+      height: 9px;
+    }
+    @include media-tablet {
+      width: 8px;
+      height: 8px;
+    }
   }
   .rhap_volume-button {
     width: 23px;
     height: 23px;
+    @include media-mobile {
+      width: 21px;
+      height: 21px;
+    }
   }
 }

@@ -3,6 +3,9 @@
   @include flex(
     $direction: row, $justify-content: space-between, $align-items: center
   );
+  @include media-mobile {
+    flex-direction: column,
+  }
 }
 
 .header__title {
@@ -14,6 +17,19 @@
       $line-height: themed('titleLineHeight'),
     );
   }
+  @include media-small-laptop {
+    @include themify() {
+      font-size: themed('smallLaptopAppTitleFontSize');
+    }
+  }
+  @include media-tablet {
+    @include themify() {
+      font-size: themed('tabletAppTitleFontSize');
+    }
+  }
+  @include media-mobile {
+    margin-bottom: $standart-indent;
+  }
 }
 
 .header__current-score {
@@ -22,5 +38,20 @@
     @include font(
       $font-size: themed('defaultScoreFontSize'), $font-family: themed('fontFamilySecondary'),
     )
+  }
+  @include media-small-laptop {
+    @include themify() {
+      font-size: themed('smallLaptopScoreFontSize');
+    }
+  }
+  @include media-tablet {
+    @include themify() {
+      font-size: themed('tabletScoreFontSize');
+    }
+  }
+  @include media-mobile {
+    @include themify() {
+      font-size: themed('mobileScoreFontSize');
+    }
   }
 }

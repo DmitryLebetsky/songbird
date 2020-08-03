@@ -1,10 +1,18 @@
 .next-category-button {
   width: 100%;
   @include themify() {
+    background-color: rgba($color: themed('colorPrimary'), $alpha: 0.25);
+  }
+  @include themify() {
     @include font(
       $font-size: themed('defaultNextCategoryButtonFontSize'),
       $font-family: themed('fontFamilySecondary'),
     )
+  }
+  @include media-mobile {
+    @include themify() {
+      font-size: themed('mobileNextCategoryButtonFontSize');
+    }
   }
   &[disabled] {
     opacity: 0.5;
