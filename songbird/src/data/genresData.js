@@ -255,7 +255,7 @@ const genresData = [
       },
       {
         id: 5,
-        title: 'P!nk - Just Like Fire (From the Original Motion Picture "Alice Through The Looking Glass")',
+        title: 'P!nk - Just Like Fire',
         description: '“Just like Fire” by Pink mainly speaks about the singer’s determination to live out her own dreams and truly be herself without being controlled by other people. It appears she works hard to reach her maximum potential, but realizes that the very people around her have been hindering her from attaining her goals.',
         cover: pinkJustLikeFireCover,
         audio: pinkJustLikeFireAudio,
@@ -459,7 +459,7 @@ const genresData = [
       },
       {
         id: 3,
-        title: 'Frank Sinatra - Let It Snow, Let It Snow, Let It Snow',
+        title: 'Frank Sinatra - Let It Snow',
         description: 'This is the most Christmas song you\'ve ever heard.',
         cover: frankSinatraLetItSnowLetItSnowLetItSnowCover,
         audio: frankSinatraLetItSnowLetItSnowLetItSnowAudio,

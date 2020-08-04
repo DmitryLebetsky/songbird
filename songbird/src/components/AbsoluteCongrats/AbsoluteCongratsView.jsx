@@ -4,7 +4,7 @@ import Particles from 'react-particles-js';
 import PlayAgainButton from '../PlayAgainButton';
 
 import musicNoteIcon from '../../assets/images/icons/Croche_tête_en_bas.svg';
-import absoluteCongratsSongSrc from '../../assets/audios/absolute-congrats-song.mp3';
+import soundEffectsData from '../../data/soundEffectsData';
 
 import { getMaxScoreValue } from '../../helpers/functions';
 
@@ -24,7 +24,7 @@ const AbsoluteCongratsView = ({
     <div className="absolute-congrats-container__mosque"></div>
     <audio
       autoPlay
-      src={absoluteCongratsSongSrc}>
+      src={soundEffectsData.absoluteWinSong}>
     </audio>
     <Particles
         className="absolute-congrats-container__particles"

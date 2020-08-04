@@ -15,8 +15,14 @@ const getMaxScoreValue = () => (
   genresData.reduce((acc, currentValue) => acc + currentValue.songs.length - 1, 0)
 );
 
+const playAudio = (src) => {
+  const audio = new Audio(src);
+  audio.play();
+};
+
 export {
   getRandomElementFromArray,
   findEqualObjectInArrayByProperty,
   getMaxScoreValue,
+  playAudio,
 };

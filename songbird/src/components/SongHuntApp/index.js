@@ -5,7 +5,10 @@ import SongHuntAppView from './SongHuntAppView.jsx';
 import {
   getRandomElementFromArray,
   findEqualObjectInArrayByProperty,
+  playAudio,
 } from '../../helpers/functions';
+
+import soundEffectsData from '../../data/soundEffectsData';
 import genresData from '../../data/genresData';
 
 class SongHuntApp extends React.Component {
@@ -48,23 +51,25 @@ class SongHuntApp extends React.Component {
           currentChoosedSong: { ...choosedSong },
         };
       } else {
+        const isAttemptRight = originalChoosedSong.id === state.currentActiveSong.id;
         const newState = {
           currentActiveGenreData: {
             ...state.currentActiveGenreData,
             songs: [
               ...state.currentActiveGenreData.songs.slice(0, indexOfOriginalChoosedSong),
-              { ...originalChoosedSong, attempt: originalChoosedSong.id === state.currentActiveSong.id, },
+              { ...originalChoosedSong, attempt: isAttemptRight, },
               ...state.currentActiveGenreData.songs.slice(indexOfOriginalChoosedSong + 1),
             ],
-            isCompleted: originalChoosedSong.id === state.currentActiveSong.id,
+            isCompleted: isAttemptRight,
           },
           currentScore: state.currentScore,
           currentChoosedSong: { ...choosedSong },
         };
-        if (originalChoosedSong.id === state.currentActiveSong.id) {
+        if (isAttemptRight) {
           const countOfAttempts = newState.currentActiveGenreData.songs.reduce((acc, song) => song.attempt === null ? acc : acc + 1, 0);
           newState.currentScore += newState.currentActiveGenreData.songs.length - countOfAttempts;
         }
+        playAudio(isAttemptRight ? soundEffectsData.correctSoundEffect : soundEffectsData.wrongSoundEffect);
         return newState;
       }
     })
