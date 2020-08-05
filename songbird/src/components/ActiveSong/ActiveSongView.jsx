@@ -20,6 +20,7 @@ const ActiveSongView = ({
           title={hideSong ? null : currentActiveSong.title}
           className="active-song-info-container__title">{hideSong ? '******' : currentActiveSong.title}</p>
           <AudioPlayer
+            autoPlay={true}
             onPlay={onCurrentActiveSongAudioPlayerPlay}
             audioRef={currentActiveSongAudioPlayerRef}
             src={currentActiveSong.audioMinus}/>

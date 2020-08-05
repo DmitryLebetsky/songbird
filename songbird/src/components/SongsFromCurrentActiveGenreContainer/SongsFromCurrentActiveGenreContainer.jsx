@@ -4,18 +4,19 @@ import SongsListFromCurrentActiveGenre from '../SongsListFromCurrentActiveGenre'
 import CurrentChoosedSong from '../CurrentChoosedSong';
 
 const SongsFromCurrentGenreContainerView = ({
-  songsFromCurrentActiveGenre,
   currentChoosedSong,
   songChoosed,
   currentChoosedSongAudioPlayerRef,
   onCurrentChoosedSongAudioPlayerPlay,
+  currentActiveGenreData,
 }) => (
   <div className="songs-from-current-active-genre-container">
     <SongsListFromCurrentActiveGenre
-      songsFromCurrentActiveGenre={songsFromCurrentActiveGenre}
+      songsFromCurrentActiveGenre={currentActiveGenreData.songs}
       currentChoosedSong={currentChoosedSong}
       songChoosed={songChoosed} />
     <CurrentChoosedSong
+      isCurrentActiveGenreCompleted={currentActiveGenreData.isCompleted}
       onCurrentChoosedSongAudioPlayerPlay={onCurrentChoosedSongAudioPlayerPlay}
       currentChoosedSong={currentChoosedSong}
       currentChoosedSongAudioPlayerRef={currentChoosedSongAudioPlayerRef} />

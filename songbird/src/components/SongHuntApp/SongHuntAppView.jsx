@@ -67,7 +67,7 @@ const SongHuntAppView = ({
                 onCurrentActiveSongAudioPlayerPlay={onCurrentActiveSongAudioPlayerPlay}/>
   
               <SongsFromCurrentActiveGenreContainer
-                songsFromCurrentActiveGenre={currentActiveGenreData.songs}
+                currentActiveGenreData={currentActiveGenreData}
                 currentChoosedSong={currentChoosedSong}
                 songChoosed={songChoosed}
                 currentChoosedSongAudioPlayerRef={currentChoosedSongAudioPlayerRef}

@@ -6,6 +6,7 @@ const CurrentChoosedSongView = ({
   currentChoosedSong,
   currentChoosedSongAudioPlayerRef,
   onCurrentChoosedSongAudioPlayerPlay,
+  isCurrentActiveGenreCompleted,
 }) => (
   <div className="current-choosed-song-container">
     {
@@ -18,6 +19,7 @@ const CurrentChoosedSongView = ({
               <p className="current-choosed-song-main-info-container__title">{currentChoosedSong.title}</p>
               <p className="current-choosed-song-main-info-container__year">{currentChoosedSong.year}</p>
               <AudioPlayer
+                autoPlay={isCurrentActiveGenreCompleted}
                 onPlay={onCurrentChoosedSongAudioPlayerPlay}
                 audioRef={currentChoosedSongAudioPlayerRef}
                 className="choosed-song-audioplayer"
