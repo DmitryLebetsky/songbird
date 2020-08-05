@@ -7,6 +7,8 @@ const SongsFromCurrentGenreContainerView = ({
   songsFromCurrentActiveGenre,
   currentChoosedSong,
   songChoosed,
+  currentChoosedSongAudioPlayerRef,
+  onCurrentChoosedSongAudioPlayerPlay,
 }) => (
   <div className="songs-from-current-active-genre-container">
     <SongsListFromCurrentActiveGenre
@@ -14,7 +16,9 @@ const SongsFromCurrentGenreContainerView = ({
       currentChoosedSong={currentChoosedSong}
       songChoosed={songChoosed} />
     <CurrentChoosedSong
-      currentChoosedSong={currentChoosedSong} />
+      onCurrentChoosedSongAudioPlayerPlay={onCurrentChoosedSongAudioPlayerPlay}
+      currentChoosedSong={currentChoosedSong}
+      currentChoosedSongAudioPlayerRef={currentChoosedSongAudioPlayerRef} />
   </div>
 );
 

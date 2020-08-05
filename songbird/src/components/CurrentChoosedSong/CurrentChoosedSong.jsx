@@ -4,6 +4,8 @@ import AudioPlayer from '../AudioPlayer';
 
 const CurrentChoosedSongView = ({
   currentChoosedSong,
+  currentChoosedSongAudioPlayerRef,
+  onCurrentChoosedSongAudioPlayerPlay,
 }) => (
   <div className="current-choosed-song-container">
     {
@@ -16,6 +18,8 @@ const CurrentChoosedSongView = ({
               <p className="current-choosed-song-main-info-container__title">{currentChoosedSong.title}</p>
               <p className="current-choosed-song-main-info-container__year">{currentChoosedSong.year}</p>
               <AudioPlayer
+                onPlay={onCurrentChoosedSongAudioPlayerPlay}
+                audioRef={currentChoosedSongAudioPlayerRef}
                 className="choosed-song-audioplayer"
                 src={currentChoosedSong.audio}/>
             </div>

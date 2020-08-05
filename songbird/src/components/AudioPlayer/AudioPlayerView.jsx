@@ -12,6 +12,9 @@ import {ReactComponent as VolumeMuteAudioPlayerIcon} from '../../assets/images/i
 const AudioPlayerView = ({
   src,
   className = '',
+  autoPlay = false,
+  audioRef = null,
+  onPlay = () => {},
 }) => {
   const audioPlayerClasses = classNames({
     'songhunt-audio-player': true,
@@ -19,8 +22,10 @@ const AudioPlayerView = ({
   });
   return (
     <AudioPlayer
-      autoPlay={false}
+      ref={audioRef}
+      autoPlay={autoPlay}
       autoPlayAfterSrcChange={false}
+      onPlay={onPlay}
       customIcons={{
         play: <PlayAudioPlayerIcon className="songhunt-audio-player__play-icon"/>,
         pause: <StopAudioPlayerIcon className="songhunt-audio-player__stop-icon"/>,

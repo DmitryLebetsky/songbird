@@ -74,6 +74,7 @@ class SongHuntApp extends React.Component {
         if (isAttemptRight) {
           const countOfAttempts = newState.currentActiveGenreData.songs.reduce((acc, song) => song.attempt === null ? acc : acc + 1, 0);
           newState.currentScore += newState.currentActiveGenreData.songs.length - countOfAttempts;
+          this.stopAudioPlayer(this.currentActiveSongAudioPlayerRef);
         }
         playAudio(isAttemptRight ? soundEffectsData.correctSoundEffect : soundEffectsData.wrongSoundEffect);
         return newState;
@@ -107,14 +108,24 @@ class SongHuntApp extends React.Component {
     this.setState(this.generateInitialState());
   }
 
+  currentActiveSongAudioPlayerRef = React.createRef()
+  currentChoosedSongAudioPlayerRef = React.createRef()
+
+  stopAudioPlayer = (refToAudioPlayer) => {
+    if (refToAudioPlayer.current) {
+      refToAudioPlayer.current.audio.current.pause();
+    }
+  }
+
   render() {
     const {
       currentActiveGenreData,
       currentScore,
       currentActiveSong,
       currentChoosedSong,
-      isAllGenresCompleted
+      isAllGenresCompleted,
     } = this.state;
+
     return <SongHuntAppView
       playAgain={this.playAgain}
       isAllGenresCompleted={isAllGenresCompleted}
@@ -123,7 +134,11 @@ class SongHuntApp extends React.Component {
       currentActiveSong={currentActiveSong}
       currentChoosedSong={currentChoosedSong}
       songChoosed={this.songChoosed}
-      moveToNextCategory={this.moveToNextCategory}/>
+      moveToNextCategory={this.moveToNextCategory}
+      currentActiveSongAudioPlayerRef={this.currentActiveSongAudioPlayerRef}
+      currentChoosedSongAudioPlayerRef={this.currentChoosedSongAudioPlayerRef}
+      onCurrentActiveSongAudioPlayerPlay={() => this.stopAudioPlayer(this.currentChoosedSongAudioPlayerRef)}
+      onCurrentChoosedSongAudioPlayerPlay={() => this.stopAudioPlayer(this.currentActiveSongAudioPlayerRef)}/>
   }
 }
 

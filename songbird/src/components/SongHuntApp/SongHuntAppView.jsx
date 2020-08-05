@@ -20,6 +20,10 @@ const SongHuntAppView = ({
   moveToNextCategory,
   isAllGenresCompleted,
   playAgain,
+  currentActiveSongAudioPlayerRef,
+  currentChoosedSongAudioPlayerRef,
+  onCurrentActiveSongAudioPlayerPlay,
+  onCurrentChoosedSongAudioPlayerPlay,
 }) => {
   const songhuntAppContainerClasses = classNames({
     'songhunt-app-container': true,
@@ -57,17 +61,21 @@ const SongHuntAppView = ({
                 currentActiveGenreData={currentActiveGenreData}/>
               
               <ActiveSong
-              currentActiveGenreData={currentActiveGenreData}
-              currentActiveSong={currentActiveSong}/>
+                currentActiveGenreData={currentActiveGenreData}
+                currentActiveSong={currentActiveSong}
+                currentActiveSongAudioPlayerRef={currentActiveSongAudioPlayerRef}
+                onCurrentActiveSongAudioPlayerPlay={onCurrentActiveSongAudioPlayerPlay}/>
   
               <SongsFromCurrentActiveGenreContainer
-              songsFromCurrentActiveGenre={currentActiveGenreData.songs}
-              currentChoosedSong={currentChoosedSong}
-              songChoosed={songChoosed}/>
+                songsFromCurrentActiveGenre={currentActiveGenreData.songs}
+                currentChoosedSong={currentChoosedSong}
+                songChoosed={songChoosed}
+                currentChoosedSongAudioPlayerRef={currentChoosedSongAudioPlayerRef}
+                onCurrentChoosedSongAudioPlayerPlay={onCurrentChoosedSongAudioPlayerPlay}/>
   
               <NextCatogoryButton
-              disabled={!currentActiveGenreData.isCompleted}
-              moveToNextCategory={moveToNextCategory}/>
+                disabled={!currentActiveGenreData.isCompleted}
+                moveToNextCategory={moveToNextCategory}/>
             </div>
           )
         }
