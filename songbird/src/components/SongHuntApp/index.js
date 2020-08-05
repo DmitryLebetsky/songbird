@@ -74,7 +74,7 @@ class SongHuntApp extends React.Component {
         if (isAttemptRight) {
           const countOfAttempts = newState.currentActiveGenreData.songs.reduce((acc, song) => song.attempt === null ? acc : acc + 1, 0);
           newState.currentScore += newState.currentActiveGenreData.songs.length - countOfAttempts;
-          this.stopAudioPlayer(this.currentActiveSongAudioPlayerRef);
+          this.stopAudioPlayer(this.currentActiveSongAudioPlayerRef); // TODO: REMOVE AFTER CROSSCHECK
         }
         playAudio(isAttemptRight ? soundEffectsData.correctSoundEffect : soundEffectsData.wrongSoundEffect);
         return newState;
@@ -111,7 +111,7 @@ class SongHuntApp extends React.Component {
   currentActiveSongAudioPlayerRef = React.createRef()
   currentChoosedSongAudioPlayerRef = React.createRef()
 
-  stopAudioPlayer = (refToAudioPlayer) => {
+  stopAudioPlayer = (refToAudioPlayer) => { // TODO: REMOVE METHOD AFTER CROSSCHECK
     if (refToAudioPlayer.current) {
       refToAudioPlayer.current.audio.current.pause();
     }
