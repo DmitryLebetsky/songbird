@@ -14,7 +14,7 @@ const AbsoluteCongratsView = ({
 }) => (
   <div className="absolute-congrats-container">
     <div className="absolute-congrats-text-container">
-      <h2 className="absolute-congrats-text-container__title">Congrats!</h2>
+      <h2 className="absolute-congrats-text-container__title">Absolute win!</h2>
       <p className="absolute-congrats-text-container__subtitle">{`You passed the quiz and scored ${currentScore} out of ${getMaxScoreValue()} possible points`}</p>
       <PlayAgainButton
         onClick={playAgain}

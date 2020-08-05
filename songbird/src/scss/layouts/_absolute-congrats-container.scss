@@ -42,9 +42,10 @@
 }
 
 .absolute-congrats-text-container__title {
+  margin-bottom: $standart-indent;
   font-size: 12rem;
   text-align: center;
-  line-height: 120%;
+  line-height: 83%;
   font-family: $jazz-primary-font-family;
   color: $color-light;
   @include media-tablet {
