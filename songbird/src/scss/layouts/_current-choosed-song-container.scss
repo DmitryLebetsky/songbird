@@ -64,7 +64,6 @@
 .current-choosed-song-main-info-container__title {
   color: $color-light;
   border-bottom: 1px solid $color-light;
-  margin-bottom: $standart-indent;
   @include themify() {
     @include font (
       $font-size: themed('defaultChoosedSongTitleFontSize'),
@@ -74,6 +73,23 @@
   @include media-mobile {
     @include themify() {
       font-size: themed('mobileChoosedSongTitleFontSize');
+    }
+  }
+}
+
+.current-choosed-song-main-info-container__year {
+  color: $color-light;
+  border-bottom: 1px solid $color-light;
+  margin-bottom: $standart-indent;
+  @include themify() {
+    @include font(
+      $font-size: themed('defaultChoosedSongYearFontSize'),
+      $font-family: themed('fontFamilySecondary'),
+    );
+  }
+  @include media-mobile {
+    @include themify() {
+      font-size: themed('mobileChoosedSongYearFontSize');
     }
   }
 }

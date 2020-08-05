@@ -14,6 +14,7 @@ const CurrentChoosedSongView = ({
             <img className="current-choosed-song-info-container__cover" src={currentChoosedSong.cover} alt="song cover"/>
             <div className="current-choosed-song-main-info-container">
               <p className="current-choosed-song-main-info-container__title">{currentChoosedSong.title}</p>
+              <p className="current-choosed-song-main-info-container__year">{currentChoosedSong.year}</p>
               <AudioPlayer
                 className="choosed-song-audioplayer"
                 src={currentChoosedSong.audio}/>

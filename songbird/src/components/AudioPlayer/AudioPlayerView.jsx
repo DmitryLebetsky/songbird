@@ -20,6 +20,7 @@ const AudioPlayerView = ({
   return (
     <AudioPlayer
       autoPlay={false}
+      autoPlayAfterSrcChange={false}
       customIcons={{
         play: <PlayAudioPlayerIcon className="songhunt-audio-player__play-icon"/>,
         pause: <StopAudioPlayerIcon className="songhunt-audio-player__stop-icon"/>,

@@ -27,13 +27,19 @@ class SongHuntApp extends React.Component {
 
   genresData = this.prepareGenresDataForGame(genresData)
 
-  generateInitialState = () => ({
-    currentActiveGenreData: { ...this.genresData[0] },
-    currentActiveSong: { ...getRandomElementFromArray(this.genresData[0].songs) },
-    currentScore: 0,
-    currentChoosedSong: null,
-    isAllGenresCompleted: false,
-  })
+  generateInitialState = () => {
+    /* TODO: DELETE AFTER CROSSCHECK */
+    const randomSong = { ...getRandomElementFromArray(this.genresData[0].songs) };
+    console.log(`ПРАВИЛЬНЫЙ ОТВЕТ: ${randomSong.title}`);
+    /**/
+    return {
+      currentActiveGenreData: { ...this.genresData[0] },
+      currentActiveSong: randomSong,
+      currentScore: 0,
+      currentChoosedSong: null,
+      isAllGenresCompleted: false,
+    }
+  }
 
   state = this.generateInitialState()
 
@@ -81,9 +87,13 @@ class SongHuntApp extends React.Component {
       indexOfCurrentCategory,
     ] = findEqualObjectInArrayByProperty(this.genresData, this.state.currentActiveGenreData, 'id');
     if (this.genresData[indexOfCurrentCategory + 1] !== undefined) {
+      /* TODO: DELETE AFTER CROSSCHECK */
+      const randomSong = { ...getRandomElementFromArray(this.genresData[indexOfCurrentCategory + 1].songs) };
+      console.log(`ПРАВИЛЬНЫЙ ОТВЕТ: ${randomSong.title}`);
+      /**/
       this.setState({
         currentActiveGenreData: { ...this.genresData[indexOfCurrentCategory + 1] },
-        currentActiveSong: { ...getRandomElementFromArray(this.genresData[indexOfCurrentCategory + 1].songs) },
+        currentActiveSong: randomSong,
         currentChoosedSong: null,
       })
     } else {
