@@ -1,0 +1,60 @@
+.congrats-container {
+  padding: $standart-indent;
+  background-color: rgba($color: $color-light, $alpha: 0.5);
+  animation: appearAnimation #{$standart-transition-duration * 2} ease-in-out;
+  @include flex(
+    $direction: column,
+    $justify-content: flex-start,
+    $align-items: center,
+  )
+}
+
+.congrats-container__title {
+  color: $color-light;
+  margin-bottom: #{$standart-indent * 2};
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilyPrimary'),
+      $font-size: themed('defaultCongratsTitleFontSize'),
+    )
+  }
+}
+
+.congrats-container__subtitle {
+  color: $color-light;
+  margin-bottom: #{$standart-indent * 2};
+  text-align: center;
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilySecondary'),
+      $font-size: themed('defaultCongratsSubtitleFontSize'),
+    )
+  }
+  @include media-small-laptop {
+    @include themify() {
+      font-size: themed('smallLaptopCongratsSubtitleFontSize');
+    }
+  }
+  @include media-tablet {
+    @include themify() {
+      font-size: themed('tabletCongratsSubtitleFontSize');
+    }
+  }
+}
+
+.congrats-container__play-again-button {
+  width: 300px;
+  @include themify() {
+    @include font(
+      $font-family: themed('fontFamilySecondary'),
+      $font-size: themed('defaultCongratsPlayAgainButtonFontSize'),
+    )
+  }
+  @include neon-button(
+    $text-color: $color-light,
+    $hover-text-color: $color-light,
+  );
+  @include media-mobile {
+    width: 100%;
+  }
+}

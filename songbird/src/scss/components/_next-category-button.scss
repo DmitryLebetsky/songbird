@@ -1,0 +1,32 @@
+.next-category-button {
+  width: 100%;
+  @include themify() {
+    background-color: rgba($color: themed('colorPrimary'), $alpha: 0.25);
+  }
+  @include themify() {
+    @include font(
+      $font-size: themed('defaultNextCategoryButtonFontSize'),
+      $font-family: themed('fontFamilySecondary'),
+    )
+  }
+  @include media-mobile {
+    @include themify() {
+      font-size: themed('mobileNextCategoryButtonFontSize');
+    }
+  }
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+    transition: background-color #{$standart-transition-duration * 2} #{$standart-transition-duration * 4} ease;
+    @include themify() {
+      background-color: rgba($color: themed('colorPrimary'), $alpha: 0.25);
+    }
+    span {
+      opacity: 0;
+    }
+  }
+  @include neon-button(
+    $text-color: rgba($color: $color-light, $alpha: 0.5),
+    $hover-text-color: $color-light,
+  );
+}

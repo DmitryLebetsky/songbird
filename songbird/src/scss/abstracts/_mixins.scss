@@ -1,0 +1,156 @@
+@mixin flex($direction: row, $justify-content: flex-start, $align-items: flex-start, $flex-wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin font($font-size, $font-weight: null, $font-style: null, $font-family: null, $line-height: null) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-family: $font-family;
+  line-height: $line-height;
+}
+
+@mixin centred-background-image($background-image, $background-size: cover, $background-position: center) {
+  background-image: $background-image;
+  background-size: $background-size;
+  background-position: $background-position;
+}
+
+/* Media mixins */
+
+@mixin media-hover() {
+  @media (hover: hover) { @content; }
+}
+
+@mixin media-small-laptop {
+  @media (max-width: $small-laptop-width) { @content; }
+}
+
+@mixin media-tablet {
+  @media (max-width: $tablet-width) { @content; }
+}
+
+@mixin media-mobile {
+  @media (max-width: $mobile-width) { @content; }
+}
+
+/* Style mixins */
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+@mixin neon-button($text-color: rgba($color: $color-light, $alpha: 0.5), $hover-text-color: $color-light) {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  color: $text-color;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  &:enabled {
+    background-color: transparent;
+    transition: opacity #{$standart-transition-duration * 2} ease,
+                background-color #{$standart-transition-duration * 2} ease,
+                box-shadow #{$standart-transition-duration * 2} ease,
+                color #{$standart-transition-duration * 2} ease;
+  }
+  & span {
+    opacity: 1;
+    position: absolute;
+    display: block;
+    transition: opacity #{$standart-transition-duration * 2} ease;
+  }
+  & span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    @include themify() {
+      background: linear-gradient(90deg, transparent, themed('colorPrimary'));
+    }
+    animation: animate1 1s linear infinite;
+  }
+  & span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    @include themify() {
+      background: linear-gradient(180deg, transparent, themed('colorPrimary'));
+    }
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+  }
+  & span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    @include themify() {
+      background: linear-gradient(270deg, transparent, themed('colorPrimary'));
+    }
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+  }
+  & span:nth-child(4) {
+    bottom: 100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    @include themify() {
+      background: linear-gradient(360deg, transparent, themed('colorPrimary'));
+    }
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+  }
+  &:enabled:hover {
+    color: $hover-text-color;
+    @include themify() {
+      box-shadow: 0 0 5px themed('colorPrimary'),
+                  0 0 25px themed('colorPrimary'),
+                  0 0 50px themed('colorPrimary'),
+                  0 0 200px themed('colorPrimary');
+      background-color: themed('colorPrimary');
+    }
+    span {
+      opacity: 0;
+    }
+  }
+}
